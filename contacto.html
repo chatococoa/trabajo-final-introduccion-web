@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="contacto.css">
+    <title>Contacto</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md">
+            <div class="container">
+
+                <a class="navbar-brand d-flex align-items-center gap-3" href="index.html">
+                    <img src="./assets/images/logo.png" alt="Logo Veterinaria Chibi Pets" width="100">
+
+                    <div class="empresa">
+                        <h1>Veterinaria Chibi Pets</h1>
+                        <h2>Pequeños pacientes, grandes cuidados.</h2>
+                    </div>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarChibi"
+                    aria-controls="navbarChibi" aria-expanded="false" aria-label="Abrir navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarChibi">
+                    <ul class="navbar-nav ms-auto align-items-md-center gap-md-3">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="institucional.html">Institucional</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="contacto.html">Contacto</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="mascotas.html">Mascotas</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="veterinarios.html">Veterinarios</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="btn boton-turno" href="contacto.html">
+                                Pedir turno
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <main class="contacto-main">
+        <section class="container py-5 text-center">
+            <h2 class="fs-1 fw-semibold mb-3">Contacto</h2>
+
+            <p class="text-secondary">
+                Escribinos, llamanos o pasá por el consultorio.
+                Estamos para ayudarte.
+            </p>
+        </section>
+
+
+        <section class="container pb-5">
+            <div class="row g-4">
+
+                <div class="col-12 col-lg-6 contacto-info">
+
+                    <article class="info-item">
+                        <h3>Dirección</h3>
+                        <p>Av. Bartolomé Mitre 1135</p>
+                        <p>Recreo, Santa Fe</p>
+                    </article>
+
+                    <article class="info-item">
+                        <h3>Teléfono</h3>
+                        <p>(0343) 412-3456</p>
+                        <p>Urgencias: (0343) 15-678-9012</p>
+                    </article>
+
+                    <article class="info-item">
+                        <h3>Email</h3>
+                        <p>info@veterinariachibipets.com</p>
+                    </article>
+
+                    <article class="info-item">
+                        <h3>Horarios</h3>
+                        <p>Lunes a Sábados: 9:00 a 20:00 hs</p>
+                        <p>Urgencias: 24 horas</p>
+                    </article>
+                </div>
+
+                <form class="contacto-form col-12 col-lg-6" action="#" method="post">
+                    <h3>Dejanos tu consulta</h3>
+
+                    <label for="nombre">Nombre y apellido</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="tunombre@email.com" required>
+
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="(0343) 15-123-4567">
+
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="¿En qué podemos ayudarte?"
+                        required></textarea>
+
+                    <button type="submit">Enviar consulta</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-marca">
+            <span>Veterinaria Chibi Pets</span>
+            <p>
+                Av. Bartolomé Mitre 1135, Recreo, Santa Fé
+                Atención Lunes a Sábados.
+                Urgencias 24 horas.
+            </p>
+        </div>
+
+        <div class="footer-seccion">
+            <span>SECCIONES</span>
+            <a href="index.html">Inicio</a>
+            <a href="institucional.html">Institucional</a>
+            <a href="contacto.html">Contacto</a>
+        </div>
+
+        <div class="footer-seccion">
+            <span>SEGUINOS</span>
+            <a href="#" target="_blank">Facebook</a>
+            <a href="#" target="_blank">Instagram</a>
+            <a href="#" target="_blank">Tik Tok</a>
+        </div>
+    </footer>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

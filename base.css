@@ -1,0 +1,291 @@
+@font-face {
+    font-family: "Nunito-variable";
+    src: url("assets/fonts/Nunito-Variable.ttf");
+    font-weight: 100 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Fredoka";
+    src: url("assets/fonts/Fredoka.ttf");
+    font-weight: 100 800;
+    font-style: normal;
+}
+
+:root {
+    --font-titulos: "Fredoka", sans-serif;
+    --font-texto: "Nunito-variable", sans-serif;
+
+    
+
+    /* ----- Textos ----- */
+    --color-text-principal: #24364B;
+    --color-text-secundario: #5F6B78;
+    --color-text-atenuado: #8C97A3;
+    --color-text-footer-label: #66717E;
+
+    /* ----- Colores de acento ----- */
+    --color-azul-acento: #74AEB1;
+    --color-azul-oscuro: #35566B;
+    --color-azul-suave-bg: #EEE9F3;
+    --color-azul-claro-sobre-azul: #F6E4E6;
+    --color-celeste-suave-bg: #E7F2F3;
+
+    /* ----- Fondos ----- */
+    --color-bg-pagina: #FBF8F5;
+    --color-bg-tarjeta: #FFFFFF;
+
+    /* ----- Bordes ----- */
+    --color-borde-general: #E4DCDD;
+    --color-borde-tabla: #D8CDD8;
+    --color-borde-boton-secundario: #D98C95;
+
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-titulos);
+    }
+body {
+    font-family: var(--font-texto);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 100dvh;
+    background-color: var(--color-bg-pagina);
+}
+
+header,
+main,
+footer {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+main>section {
+    max-width: 100%;
+    min-width: 0;
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+
+    flex: 1 1 auto;
+}
+
+/* Estilos del header */
+
+header {
+    display: flex;
+    padding: 1rem 3rem;
+    align-items: center;
+    gap: 2rem;
+    border-bottom: 1px solid var(--color-borde-general);
+    background-color: var(--color-bg-tarjeta);
+}
+
+
+.empresa {
+    display: flex;
+    flex-direction: column;
+}
+
+.empresa h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-principal);
+}
+
+.empresa h2 {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: var(--color-text-atenuado);
+}
+
+
+.navbar .nav-link.active {
+    color: var(--color-azul-oscuro);
+    background-color: var(--color-azul-suave-bg);
+    padding: 0.5rem 0.8rem;
+    border-radius: 0.8rem;
+}
+
+
+/* NAVBAR BOOTSTRAP */
+
+.navbar {
+    width: 100%;
+}
+
+.navbar .container {
+    max-width: 100%;
+}
+
+.navbar-brand {
+    white-space: normal;
+    min-width: 0;
+}
+
+.navbar-brand .empresa {
+    min-width: 0;
+}
+
+.navbar-brand img {
+    width: 7rem;
+    height: auto;
+}
+
+.navbar-toggler {
+    flex-shrink: 0;
+}
+
+.boton-turno {
+    background-color: var(--color-azul-acento);
+    color: var(--color-bg-tarjeta);
+    border-radius: 0.6rem;
+    padding: 0.8rem 1.1rem;
+}
+
+.boton-turno:hover {
+    background-color: var(--color-azul-oscuro);
+    color: white;
+}
+
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.titulo-seccion h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-text-principal);
+}
+
+.titulo-seccion p {
+    color: var(--color-text-secundario);
+    margin-top: 0.5rem;
+}
+
+/* PROFESIONALES */
+
+.profesional-img {
+    height: 280px;
+    object-fit: cover;
+}
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 4rem;
+
+    padding: 3rem 4rem;
+
+    background-color: var(--color-azul-suave-bg);
+    border-top: 4px solid var(--color-azul-acento);
+}
+
+.footer-marca {
+    max-width: 340px;
+}
+
+.footer-marca span {
+    display: block;
+    font-family: var(--font-titulos);
+    color: var(--color-text-principal);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.7rem;
+}
+
+.footer-marca p {
+    color: var(--color-text-secundario);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.footer-seccion {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.footer-seccion span {
+    color: var(--color-azul-oscuro);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 0.3rem;
+}
+
+.footer-seccion a {
+    color: var(--color-text-secundario);
+    font-size: 0.95rem;
+    transition: 0.2s;
+}
+
+.footer-seccion a:hover {
+    color: var(--color-azul-acento);
+    transform: translateX(3px);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    /* Encabezado */
+
+    header {
+        padding: 1rem;
+    }
+
+
+    /* Navbar Bootstrap*/
+
+    .navbar-brand {
+        flex: 1;
+        margin-right: 0.5rem;
+    }
+
+    .navbar-brand img {
+        width: 4.5rem;
+    }
+
+    .navbar-brand .empresa h1 {
+        font-size: 1rem;
+        line-height: 1.2;
+    }
+
+    .navbar-brand .empresa h2 {
+        font-size: 0.65rem;
+        line-height: 1.2;
+    }
+
+
+    /* Footer de las tres páginas */
+
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    .footer-marca {
+        max-width: 100%;
+    }
+
+    .footer-seccion {
+        width: 100%;
+    }
+}

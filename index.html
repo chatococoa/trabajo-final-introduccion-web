@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Veterinaria Chibi Pets</title>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-md">
+            <div class="container">
+
+                <a class="navbar-brand d-flex align-items-center gap-3" href="index.html">
+                    <img src="./assets/images/logo.png" alt="Logo Veterinaria Chibi Pets" width="100">
+
+                    <div class="empresa">
+                        <h1>Veterinaria Chibi Pets</h1>
+                        <h2>Pequeños pacientes, grandes cuidados.</h2>
+                    </div>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarChibi"
+                    aria-controls="navbarChibi" aria-expanded="false" aria-label="Abrir navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarChibi">
+                    <ul class="navbar-nav ms-auto align-items-md-center gap-md-3">
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Inicio</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="institucional.html">Institucional</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="mascotas.html">Mascotas</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="veterinarios.html">Veterinarios</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="btn boton-turno" href="contacto.html">Pedir turno</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <article class="texto-container">
+                <div class="etiqueta">
+                    <p>ATENCIÓN CON CALIDEZ</p>
+                </div>
+
+                <div>
+                    <h3>
+                        Porque detrás de cada pequeño paciente hay un vínculo, una historia
+                        y alguien que espera verlo bien.
+                    </h3>
+
+                    <P>
+                        En Chibi Pets acompañamos con atención cercana, respeto y cuidado en cada etapa.
+                    </P>
+
+                    <div>
+                        <a class="boton-hero" href="institucional.html">Conocé Chibi Pets</a>
+                    </div>
+                </div>
+
+            </article>
+
+            <div class="hero-img">
+                <img src="./assets/images/imagen.jpeg" alt="Atención veterinaria en Chibi Pets">
+
+
+            </div>
+
+        </section>
+
+        <section class="container-fluid py-5">
+
+            <div class="container">
+
+                <div class="titulo-seccion mb-4">
+                    <h2>Nuestros servicios</h2>
+
+                    <p>
+                        Cada paciente necesita un cuidado diferente. En Chibi Pets combinamos
+                        experiencia, prevención y atención cercana para acompañarlo en cada etapa.
+                    </p>
+                </div>
+
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+
+                    <div class="col">
+                        <article class="card h-100 card-clinica">
+                            <div class="card-body">
+                                <h3 class="card-title fs-5 fw-semibold">
+                                    Medicina general y preventiva
+                                </h3>
+
+                                <p class="card-text">
+                                    Consultas, controles, vacunación y prevención para cuidar su salud día a día.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col">
+                        <article class="card h-100 card-prevencion">
+                            <div class="card-body">
+                                <h3 class="card-title fs-5 fw-semibold">
+                                    Cirugía y traumatología
+                                </h3>
+
+                                <p class="card-text">
+                                    Evaluación y tratamiento de lesiones, procedimientos quirúrgicos
+                                    y seguimiento durante la recuperación.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col">
+                        <article class="card h-100 card-urgencia">
+                            <div class="card-body">
+                                <h3 class="card-title fs-5 fw-semibold">
+                                    Urgencias 24 horas
+                                </h3>
+
+                                <p class="card-text">
+                                    Atención ante situaciones que requieren asistencia veterinaria inmediata,
+                                    durante todo el día.
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="container-fluid border-top py-4">
+            <div class="container">
+                <div class="row align-items-start g-4">
+
+                    <article class="col-12 p-0">
+                        <span class="badge rounded-pill text-danger-emphasis">HORARIOS</span>
+                        <h3 class="fs-1 fw-medium">Cuándo y dónde estamos</h3>
+                        <p>Turnos con un día de antelación. Urgencias sin turno</p>
+                    </article>
+
+                    <div class="col-12 col-lg-6">
+                        <div class="table-responsive">
+                            <table class="table tabla-horarios">
+                                <thead>
+                                    <tr>
+                                        <th>Días</th>
+                                        <th>Horario</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Lunes a Sábados</td>
+                                        <td>09:00 a 20:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Domingos y feriados</td>
+                                        <td>Cerrado</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Todos los días</td>
+                                        <td>Urgencias 24 horas</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-6">
+                        <div class="mapa-box">
+                            <img src="./assets/images/mapa.jpeg" alt="Mapa de ubicación de Chibi Pets">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="container-fluid py-5 porque-chibi">
+            <div class="container">
+
+                <div class="titulo-seccion mb-4">
+                    <h2>¿Por qué elegir Chibi Pets?</h2>
+
+                    <p>
+                        Porque cada paciente merece ser acompañado con respeto,
+                        atención y cercanía.
+                    </p>
+                </div>
+
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+
+                    <div class="col">
+                        <article class="porque-item h-100">
+                            <h3>Atención cercana</h3>
+                            <p>
+                                Escuchamos y acompañamos a cada familia en cada consulta.
+                            </p>
+                        </article>
+                    </div>
+
+                    <div class="col">
+                        <article class="porque-item h-100">
+                            <h3>Respeto por cada paciente</h3>
+                            <p>
+                                Cada animal es único y merece un cuidado pensado
+                                para sus necesidades.
+                            </p>
+                        </article>
+                    </div>
+
+                    <div class="col">
+                        <article class="porque-item h-100">
+                            <h3>Seguimiento</h3>
+                            <p>
+                                No nos quedamos solo con la consulta:
+                                acompañamos su evolución.
+                            </p>
+                        </article>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section class="container-fluid py-5 profesionales">
+            <div class="container">
+
+                <div class="titulo-seccion mb-4">
+                    <h2>Nuestros Profesionales</h2>
+                    <p>
+                        Contamos con un equipo de especialistas dedicados al bienestar de tu mascota.
+                    </p>
+                </div>
+
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+
+                    <div class="col">
+                        <article class="card h-100 text-center">
+                            <img src="./assets/images/veterinario1.jpeg" class="card-img-top profesional-img"
+                                alt="Dra. Brenda Ivana Morán">
+
+                            <div class="card-body">
+                                <h3 class="card-title fs-5 fw-semibold">
+                                    Dra. Brenda Ivana Morán
+                                </h3>
+
+                                <p class="card-text text-secondary">
+                                    Medicina general
+                                </p>
+
+                                <p class="fw-semibold">
+                                    $15.000
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col">
+                        <article class="card h-100 text-center">
+                            <img src="./assets/images/veterinario2.jpeg" class="card-img-top profesional-img"
+                                alt="Dr. Marcelino Adrián Mamaní">
+
+                            <div class="card-body">
+                                <h3 class="card-title fs-5 fw-semibold">
+                                    Dr. Marcelino Adrián Mamaní
+                                </h3>
+
+                                <p class="card-text text-secondary">
+                                    Cirugía y traumatología
+                                </p>
+
+                                <p class="fw-semibold">
+                                    $18.000
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col">
+                        <article class="card h-100 text-center">
+                            <img src="./assets/images/veterinario3.jpeg" class="card-img-top profesional-img"
+                                alt="Dra. Alicia Nilda Acosta">
+
+                            <div class="card-body">
+                                <h3 class="card-title fs-5 fw-semibold">
+                                    Dra. Alicia Nilda Acosta
+                                </h3>
+
+                                <p class="card-text text-secondary">
+                                    Medicina interna y dermatología
+                                </p>
+
+                                <p class="fw-semibold">
+                                    $17.000
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="col">
+                        <article class="card h-100 text-center">
+                            <img src="./assets/images/veterinario4.jpeg" class="card-img-top profesional-img"
+                                alt="Dr. Juan Carlos Pérez">
+
+                            <div class="card-body">
+                                <h3 class="card-title fs-5 fw-semibold">
+                                    Dr. Juan Carlos Pérez
+                                </h3>
+
+                                <p class="card-text text-secondary">
+                                    Cardiología veterinaria
+                                </p>
+
+                                <p class="fw-semibold">
+                                    $20.000
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section class="container-fluid py-5">
+            <div class="container">
+
+                <div class="row align-items-center g-4 p-4 rounded-4 turno-final">
+
+                    <div class="col-12 col-md">
+                        <h2>¿Necesitás una consulta?</h2>
+                        <p>Estamos para acompañarte y cuidar de ellos.</p>
+                    </div>
+
+                    <div class="col-12 col-md-auto">
+                        <a class="btn" href="contacto.html">Pedir turno</a>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-marca">
+            <span>Veterinaria Chibi Pets</span>
+            <p>
+                Av. Bartolomé Mitre 1135, Recreo, Santa Fé
+                Atención Lunes a Sábados.
+
+                Urgencias 24 horas.
+            </p>
+
+        </div>
+
+        <div class="footer-seccion">
+            <span>SECCIONES</span>
+            <a href="index.html">Inicio</a>
+            <a href="institucional.html">Institucional</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="mascotas.html">Mascotas</a>
+
+
+        </div>
+
+        <div class="footer-seccion">
+            <span>SEGUINOS</span>
+            <a href="#" target="_blank">Facebook</a>
+            <a href="#" target="_blank">Instagram</a>
+            <a href="#" target="_blank">Tik Tok</a>
+
+        </div>
+    </footer>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
