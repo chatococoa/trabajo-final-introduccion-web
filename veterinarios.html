@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="base.css">
 
+    <script defer src="./sesion.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script defer src="veterinarios.js"></script>
 
     <title>Veterinarios</title>
@@ -38,29 +40,28 @@
                     <ul class="navbar-nav ms-auto align-items-md-center gap-md-3">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">Inicio</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="institucional.html">Institucional</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="contacto.html">Contacto</a>
-                        </li>
-
-                        <li class="nav-item">
                             <a class="nav-link" href="mascotas.html">Mascotas</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link active" href="veterinarios.html">Veterinarios</a>
+                            <a class="nav-link active" ="veterinarios.html">Veterinarios</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="btn boton-turno" href="contacto.html">
-                                Pedir turno
-                            </a>
+                            <a class="nav-link" href="turnos.html">Turnos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="historiaClinica.html">Historia Clínica</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="admin.html">Panel</a>
+                        </li>
+
+                        <li class="nav-item d-flex flex-column align-items-center">
+                            <button class="btn btn-secondary" onclick="cerrarSesion()">Cerrar sesión</button>
+
                         </li>
 
                     </ul>
@@ -81,6 +82,16 @@
                         <span class="badge text-bg-success align-middle fs-5" id="total">0</span>
                     </h2>
 
+                 <div class="mb-3">
+                    <label for="filtroEspecializacion" class="form-label">
+                        Filtrar por especialización
+                    </label>
+
+                    <select id="filtroEspecializacion" class="form-select">
+                        <option value="">Todas las especializaciones</option>
+                    </select>
+                </div>   
+
                  <div class="table-responsive-md">
                      <table class="table table-striped">
                          <thead>
@@ -89,6 +100,7 @@
                                  <th>Nombre</th>
                                  <th>Especializacion</th>
                                  <th>Valor de Consulta</th>
+                                 <th>Imagen</th>
                                  <th>Acciones</th>
                              </tr>
                          </thead>
@@ -125,7 +137,12 @@
                         </div>
 
                         <div class="col-md-6">
-                            <button class="btn btn-primary w-100" type="submit">Agregar Veterinario</button>
+                            <label for="imagen" class="form-label">Imagen</label>
+                             <input type="file" id="imagen" name="imagen" class="form-control" accept="image/*" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <button id="btn-submit-veterinario" class="btn btn-primary w-100" type="submit">Agregar Veterinario</button>
                         </div>
 
                     </form>
@@ -169,7 +186,52 @@
         </div>
     </footer>
 
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+     <div class="modal fade" id="modal-editar" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Editar Mascota</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                </div>
+
+                <form id="form-editar">
+                    <div class="modal-body d-flex flex-column gap-3">
+                        <div>
+                            <label for="editarMatricula" class="form-label">Matrícula</label>
+                            <input type="text" name="editarMatricula" id="editarMatricula" class="form-control" required>
+                        </div>
+
+                        <div>
+                            <label for="editarNombre" class="form-label">Nombre</label>
+                            <input type="text" name="editarNombre" id="editarNombre" class="form-control" required>
+                        </div>
+
+                        <div>
+                            <label for="editarEspecializacion" class="form-label">Especialización</label>
+                            <input type="text" name="editarEspecializacion" id="editarEspecializacion" class="form-control" required>
+                        </div>
+
+                        <div>
+                            <label for="editarValorConsulta" class="form-label">Valor de la Consulta</label>
+                            <input type="number" name="editarValorConsulta" id="editarValorConsulta" class="form-control" required>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"data-bs-dismiss="modal">Cancelar</button>
+                            
+                            <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                        </div>
+
+
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </body>
 
 </html>

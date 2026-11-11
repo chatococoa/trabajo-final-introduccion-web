@@ -9,9 +9,11 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="base.css">
 
-    <script defer src="./mascotas.js"></script>
-
     <title>Mascotas</title>
+
+    <script defer src="./sesion.js"></script>
+    <script defer src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="./mascotas.js"></script>
 </head>
 
 <body>
@@ -38,18 +40,6 @@
                     <ul class="navbar-nav ms-auto align-items-md-center gap-md-3">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">Inicio</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="institucional.html">Institucional</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="contacto.html">Contacto</a>
-                        </li>
-
-                        <li class="nav-item">
                             <a class="nav-link active"="mascotas.html">Mascotas</a>
                         </li>
 
@@ -58,9 +48,20 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="btn boton-turno" href="contacto.html">
-                                Pedir turno
-                            </a>
+                            <a class="nav-link" href="turnos.html">Turnos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="historiaClinica.html">Historia Clínica</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="admin.html">Panel</a>
+                        </li>
+
+                        <li class="nav-item d-flex flex-column align-items-center">
+                            <button class="btn btn-secondary" onclick="cerrarSesion()">Cerrar sesión</button>
+
                         </li>
 
                     </ul>
@@ -89,6 +90,7 @@
                                  <th>Color</th>
                                  <th>Edad</th>
                                  <th>Peso</th>
+                                 <th>Imagen</th>
                                  <th>Acciones</th>
                              </tr>
                          </thead>
@@ -128,6 +130,11 @@
                         <div class="col-md-6">
                             <label class="form-label" for="peso">Peso (kg)</label>
                             <input class="form-control" type="number" id="peso" name="peso" min="0.01" step="0.01" placeholder="Ejemplo 3.5" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label" for="ImagenMascota">Imagen de Mascota</label>
+                            <input class="form-control" type="file" id="ImagenMascota" name="ImagenMascota" accept=".png,.jpg,.jpeg" required>
                         </div>
 
                         <div class="col-md-6">
@@ -175,7 +182,59 @@
         </div>
     </footer>
 
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <div class="modal fade" id="modal-editar" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Editar Mascota</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                </div>
+
+                <form id="form-editar">
+                    <div class="modal-body d-flex flex-column gap-3">
+                        <div>
+                            <label for="editarNombreDuenio" class="form-label">Dueño</label>
+                            <input type="text" name="editarNombreDuenio" id="editarNombreDuenio" class="form-control" required>
+                        </div>
+
+                        <div>
+                            <label for="editarNombreMascota" class="form-label">Nombre de la Mascota</label>
+                            <input type="text" name="editarNombreMascota" id="editarNombreMascota" class="form-control" required>
+                        </div>
+
+                        <div>
+                            <label for="editarColor" class="form-label">Color</label>
+                            <input type="text" name="editarColor" id="editarColor" class="form-control" required>
+                        </div>
+
+                        <div>
+                            <label for="editarEdad" class="form-label">Edad</label>
+                            <input type="text" name="editarEdad" id="editarEdad" class="form-control" required>
+                        </div>
+
+                        <div>
+                            <label for="editarPeso" class="form-label">Peso</label>
+                            <input type="text" name="editarPeso" id="editarPeso" class="form-control" min="0.01" step="0.01" placeholder="Ejemplo 3.5" required>
+                        </div>
+
+                        
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"data-bs-dismiss="modal">Cancelar</button>
+                            
+                            <button type="submit" class="btn btn-primary"onclick="guardarEdicion()">Guardar cambios</button>
+                        </div>
+
+
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </body>
 
 </html>

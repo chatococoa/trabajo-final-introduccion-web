@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="base.css">
     <link rel="stylesheet" href="index.css">
     <title>Veterinaria Chibi Pets</title>
+
+    <script defer src="./sesion.js"></script>
+    <script defer src="./header.js"></script>
+
 </head>
 
 <body>
@@ -46,17 +50,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="contacto.html">Contacto</a>
                         </li>
-
+                        
                         <li class="nav-item">
-                            <a class="nav-link" href="mascotas.html">Mascotas</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="veterinarios.html">Veterinarios</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="btn boton-turno" href="contacto.html">Pedir turno</a>
+                            <a id="link-login" class="btn boton-turno" href="login.html">Iniciar Sesión</a>
                         </li>
 
                     </ul>
@@ -268,92 +264,7 @@
                     </p>
                 </div>
 
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
-
-                    <div class="col">
-                        <article class="card h-100 text-center">
-                            <img src="./assets/images/veterinario1.jpeg" class="card-img-top profesional-img"
-                                alt="Dra. Brenda Ivana Morán">
-
-                            <div class="card-body">
-                                <h3 class="card-title fs-5 fw-semibold">
-                                    Dra. Brenda Ivana Morán
-                                </h3>
-
-                                <p class="card-text text-secondary">
-                                    Medicina general
-                                </p>
-
-                                <p class="fw-semibold">
-                                    $15.000
-                                </p>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="col">
-                        <article class="card h-100 text-center">
-                            <img src="./assets/images/veterinario2.jpeg" class="card-img-top profesional-img"
-                                alt="Dr. Marcelino Adrián Mamaní">
-
-                            <div class="card-body">
-                                <h3 class="card-title fs-5 fw-semibold">
-                                    Dr. Marcelino Adrián Mamaní
-                                </h3>
-
-                                <p class="card-text text-secondary">
-                                    Cirugía y traumatología
-                                </p>
-
-                                <p class="fw-semibold">
-                                    $18.000
-                                </p>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="col">
-                        <article class="card h-100 text-center">
-                            <img src="./assets/images/veterinario3.jpeg" class="card-img-top profesional-img"
-                                alt="Dra. Alicia Nilda Acosta">
-
-                            <div class="card-body">
-                                <h3 class="card-title fs-5 fw-semibold">
-                                    Dra. Alicia Nilda Acosta
-                                </h3>
-
-                                <p class="card-text text-secondary">
-                                    Medicina interna y dermatología
-                                </p>
-
-                                <p class="fw-semibold">
-                                    $17.000
-                                </p>
-                            </div>
-                        </article>
-                    </div>
-
-                    <div class="col">
-                        <article class="card h-100 text-center">
-                            <img src="./assets/images/veterinario4.jpeg" class="card-img-top profesional-img"
-                                alt="Dr. Juan Carlos Pérez">
-
-                            <div class="card-body">
-                                <h3 class="card-title fs-5 fw-semibold">
-                                    Dr. Juan Carlos Pérez
-                                </h3>
-
-                                <p class="card-text text-secondary">
-                                    Cardiología veterinaria
-                                </p>
-
-                                <p class="fw-semibold">
-                                    $20.000
-                                </p>
-                            </div>
-                        </article>
-                    </div>
-
+                <div id="lista-profesionales" class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
                 </div>
 
             </div>
@@ -411,6 +322,7 @@
     </footer>
 
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>

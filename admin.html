@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="base.css">
+
+    <title>Login</title>
+
+    <script defer src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="./sesion.js"></script>
+    <script defer src="./admin.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-md">
+            <div class="container">
+
+                <a class="navbar-brand d-flex align-items-center gap-3" href="index.html">
+                    <img src="./assets/images/logo.png" alt="Logo Veterinaria Chibi Pets" width="100">
+
+                    <div class="empresa">
+                        <h1>Veterinaria Chibi Pets</h1>
+                        <h2>Pequeños pacientes, grandes cuidados.</h2>
+                    </div>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarChibi"
+                    aria-controls="navbarChibi" aria-expanded="false" aria-label="Abrir navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarChibi">
+                    <ul class="navbar-nav ms-auto align-items-md-center gap-md-3">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="institucional.html">Institucional</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="admin.html">Panel Admin</a>
+                        </li>
+
+                        <li>
+                            <button class="btn btn-secondary" onclick="cerrarSesion()">Cerrar Sesión</button>
+
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="container py-5">
+
+            <span class="badge rounded-pill text-bg-primary fw-semibold">PANEL ADMIN</span>
+
+            <h2 class="fs-1 fw-semibold mc-2">Hola,  <span id= "nombre-usuario"> </span>
+            </h2>
+            <p class="mb-4">Elegí un módulo para gestionar</p>
+
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+
+                <article class="col">
+                    <div class="card h-100">
+                        <div class="card-body d-flex flex-column gap-2">
+                            <h3 class="card-title fs-4">Mascotas</h3>
+                            <p class="card-text">Alta edición y baja de mascotas</p>
+                            <span class="badge text-bg-secondary align-self-start" id="total-mascotas">0</span>
+                            <a href="mascotas.html" class="btn btn-primary mt-auto">Ingresar</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col">
+                    <div class="card h-100">
+                        <div class="card-body d-flex flex-column gap-2">
+                            <h3 class="card-title fs-4">Veterinarios</h3>
+                            <p class="card-text">Gestión de profesionales</p>
+                            <span class="badge text-bg-secondary align-self-start" id="total-veterinarios">0</span>
+                            <a href="veterinarios.html" class="btn btn-primary mt-auto">Ingresar</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col">
+                    <div class="card h-100">
+                        <div class="card-body d-flex flex-column gap-2">
+                            <h3 class="card-title fs-4">Turnos</h3>
+                            <p class="card-text">Agendar Turnos</p>
+                            <span class="badge text-bg-secondary align-self-start" id="total-turnos">0</span>
+                            <a href="turnos.html" class="btn btn-primary mt-auto">Ingresar</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="col">
+                    <div class="card h-100">
+                        <div class="card-body d-flex flex-column gap-2">
+                            <h3 class="card-title fs-4">Historia Clínica</h3>
+                            <p class="card-text">Seguimiento de Mascotas</p>
+                            <span class="badge text-bg-secondary align-self-start" id="total-historiaClinica">0</span>
+                            <a href="historiaClinica.html" class="btn btn-primary mt-auto">Ingresar</a>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+            
+
+        </section>
+       
+    </main>
+
+    <footer>
+        <div class="footer-marca">
+            <span>Veterinaria Chibi Pets</span>
+            <p>
+                Av. Bartolomé Mitre 1135, Recreo, Santa Fé
+                Atención Lunes a Sábados.
+
+                Urgencias 24 horas.
+            </p>
+
+        </div>
+
+        <div class="footer-seccion">
+            <span>SECCIONES</span>
+            <a href="index.html">Inicio</a>
+            <a href="institucional.html">Institucional</a>
+            <a href="veterinarios.html">Contacto</a>
+            <a href="contacto.html">Contacto</a>
+
+
+        </div>
+
+        <div class="footer-seccion">
+            <span>SEGUINOS</span>
+            <a href="#" target="_blank">Facebook</a>
+            <a href="#" target="_blank">Instagram</a>
+            <a href="#" target="_blank">Tik Tok</a>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>

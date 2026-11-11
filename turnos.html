@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="base.css">
+
+    <title>Turnos</title>
+
+    <script defer src="./sesion.js"></script>
+    <script defer src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="./turnos.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-md">
+            <div class="container">
+
+                <a class="navbar-brand d-flex align-items-center gap-3" href="index.html">
+                    <img src="./assets/images/logo.png" alt="Logo Veterinaria Chibi Pets" width="100">
+
+                    <div class="empresa">
+                        <h1>Veterinaria Chibi Pets</h1>
+                        <h2>Pequeños pacientes, grandes cuidados.</h2>
+                    </div>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarChibi"
+                    aria-controls="navbarChibi" aria-expanded="false" aria-label="Abrir navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarChibi">
+                    <ul class="navbar-nav ms-auto align-items-md-center gap-md-3">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="mascotas.html">Mascotas</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="veterinarios.html">Veterinarios</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="turnos.html">Turnos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="historiaClinica.html">Historia Clínica</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="admin.html">Panel</a>
+                        </li>
+
+                        <li class="nav-item d-flex flex-column align-items-center">
+                            <button class="btn btn-secondary" onclick="cerrarSesion()">Cerrar sesión</button>
+
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="container py-5">
+            <div class="row g-4">
+
+                <article class="col-12 col-lg-7">
+                    <span class="badge rounded-pill text-bg-primary fw-semibold">Registro de Turnos</span>
+                    <h2 class="fs-1 fw-semibold mt-2">
+                        Turnos Programados
+                        <span class="badge text-bg-secondary align-middle fs-5" id="total">0</span>
+                    </h2>
+
+                 <div class="mb-3">
+                    <label for="filtroVeterinario" class="form-label">
+                        Filtrar turnos por veterinario
+                    </label>
+
+                    <select id="filtroVeterinario" class="form-select">
+                        <option value="">Todos los veterinarios</option>
+                    </select>
+                </div>   
+
+                 <div class="table-responsive-md">
+                     <table class="table table-striped">
+                         <thead>
+                             <tr>
+                                 <th>Fecha y hora</th>
+                                 <th>Mascota</th>
+                                 <th>Veterinario</th>
+                                 <th>Valor de consulta</th>
+                                 <th>Acciones</th>
+                             </tr>
+                         </thead>
+                         <tbody id="lista-turnos"></tbody>
+
+                        </table>
+
+                    </div>
+                </article>    
+
+                <article class="col-12 col-lg-5">
+                    <form class="d-flex flex-column gap-3 p-4 bg-body-tertiary rounded-3" id="form-turnos">
+
+                        <h3 class="fs-4">Nuevo Turno</h3>
+
+
+                        <div class="col-md-6">
+                            <label class="form-label" for="fechaHora">Fecha y hora</label>
+                            <input class="form-control" type="datetime-local" id="fechaHora" name="fechaHora" step="900" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label" for="mascota">Mascota</label>
+                            <select class="form-select" id="mascota" name="mascota" required>
+                                <option value="">Seleccione una mascota</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label" for="veterinario">Veterinario</label>
+                            <select class="form-select" id="veterinario" name="veterinario" required>
+                                <option value="">Seleccione un veterinario</option>
+                            </select>
+                            <div class="mb-3">
+                                <label class="form-label">Valor de la consulta</label>
+                                <input type="text" class="form-control" id="costoConsulta" readonly>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <button id="btn-submit-turno" class="btn btn-primary w-100" type="submit">Agregar Turno</button>
+                        </div>
+
+                    </form>
+
+                </article>
+
+            </div>
+
+        </section>
+       
+    </main>
+
+    <footer>
+        <div class="footer-marca">
+            <span>Veterinaria Chibi Pets</span>
+            <p>
+                Av. Bartolomé Mitre 1135, Recreo, Santa Fé
+                Atención Lunes a Sábados.
+
+                Urgencias 24 horas.
+            </p>
+
+        </div>
+
+        <div class="footer-seccion">
+            <span>SECCIONES</span>
+            <a href="index.html">Inicio</a>
+            <a href="institucional.html">Institucional</a>
+            <a href="veterinarios.html">Contacto</a>
+            <a href="contacto.html">Contacto</a>
+
+
+        </div>
+
+        <div class="footer-seccion">
+            <span>SEGUINOS</span>
+            <a href="#" target="_blank">Facebook</a>
+            <a href="#" target="_blank">Instagram</a>
+            <a href="#" target="_blank">Tik Tok</a>
+
+        </div>
+    </footer>
+
+    <div class="modal fade" id="modal-editar" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Editar Turno</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                </div>
+
+                <form id="form-editar">
+                    <div class="modal-body d-flex flex-column gap-3">
+                        <div>
+                            <label for="editarFechaHora" class="form-label">Fecha y Hora</label>
+                            <input class="form-control" type="datetime-local" name="editarFechaHora" id="editarFechaHora" step="900" required>
+                        </div>
+
+                        <div>
+                            <label for="editarMascota" class="form-label">Mascota</label>
+                            <select class="form-select" id="editarMascota" name="editarMascota" required>
+                                <option value="">Seleccione una mascota</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="editarVeterinario" class="form-label">Veterinario</label>
+                            <select class="form-select" id="editarVeterinario" name="editarVeterinario" required>
+                                <option value="">Seleccione un veterinario</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Valor de la consulta</label>
+                            <input type="text" class="form-control" id="editarCostoConsulta" readonly>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"data-bs-dismiss="modal">Cancelar</button>
+                            
+                            <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                        </div>
+
+
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

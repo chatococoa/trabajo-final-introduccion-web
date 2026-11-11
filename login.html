@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="base.css">
+
+    <title>Login</title>
+
+    <script defer src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="./login.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-md">
+            <div class="container">
+
+                <a class="navbar-brand d-flex align-items-center gap-3" href="index.html">
+                    <img src="./assets/images/logo.png" alt="Logo Veterinaria Chibi Pets" width="100">
+
+                    <div class="empresa">
+                        <h1>Veterinaria Chibi Pets</h1>
+                        <h2>Pequeños pacientes, grandes cuidados.</h2>
+                    </div>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarChibi"
+                    aria-controls="navbarChibi" aria-expanded="false" aria-label="Abrir navegación">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarChibi">
+                    <ul class="navbar-nav ms-auto align-items-md-center gap-md-3">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="institucional.html">Institucional</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="container py-5">
+            <div class="row g-4" justify-content-center align-items-center>
+
+                <article class="col-12 col-md-6">
+                   
+                 <div class="row g-4 justify-content-center align-items-center">
+                     <article class="col-12 col-md-6">
+
+                        <form class="d-flex flex-column gap-3 p-4 bg-body-tertiary rounded-4" id="form-sesion">
+                            <h3 class="fs-4">Iniciar Sesión</h3>
+
+                            <div>
+                                <label for="nombreUsuario" class="form-label">Nombre Usuario</label>
+                                <input type="text" name="nombreUsuario" id="nombreUsuario" class="form-control" required>
+                            </div>
+
+                            <div>
+                                <label for="contrasenia" class="form-label">Contraseña</label>
+                                <input type="text" name="contrasenia" id="contrasenia" class="form-control" required>
+                            </div>
+
+                            <span id="mensajeError" class="text-danger"></span>
+
+                            <button id="BotonInicioSesion" class="btn btn-primary" type="submit">Iniciar Sesión</button>
+                        </form>
+
+                     </article>
+
+                    </div>
+                </article>    
+
+            </div>
+
+        </section>
+       
+    </main>
+
+    <footer>
+        <div class="footer-marca">
+            <span>Veterinaria Chibi Pets</span>
+            <p>
+                Av. Bartolomé Mitre 1135, Recreo, Santa Fé
+                Atención Lunes a Sábados.
+
+                Urgencias 24 horas.
+            </p>
+
+        </div>
+
+        <div class="footer-seccion">
+            <span>SECCIONES</span>
+            <a href="index.html">Inicio</a>
+            <a href="institucional.html">Institucional</a>
+            <a href="veterinarios.html">Contacto</a>
+            <a href="contacto.html">Contacto</a>
+
+
+        </div>
+
+        <div class="footer-seccion">
+            <span>SEGUINOS</span>
+            <a href="#" target="_blank">Facebook</a>
+            <a href="#" target="_blank">Instagram</a>
+            <a href="#" target="_blank">Tik Tok</a>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>

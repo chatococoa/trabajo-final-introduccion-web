@@ -1,4 +1,7 @@
 
+if (!estaLogeado()) {
+    window.location.href = 'login.html';
+}
 
 const mascotas = JSON.parse(localStorage.getItem('mascotas')) || [];
 
@@ -8,6 +11,10 @@ const total = document.getElementById('total');
 
 const formulario = document.getElementById('form-mascotas');
 
+const formularioEditar = document.getElementById('form-editar');
+
+const modalEditar = new bootstrap.Modal(document.getElementById ('modal-editar'));
+
 let idMascotaEditar = null;
 
 //cargar datos el ingresar a la web
@@ -16,17 +23,25 @@ function render() {
     listaMascotas.innerHTML = '';
 
     mascotas.forEach( (mascota) => {
+
+        console.log(mascota.imagen);
+
         listaMascotas.innerHTML += `
         <tr>
-            <td>${mascota.nombreDuenio}</td>
-
             <td>${mascota.nombreMascota}</td>
+
+            <td>${mascota.nombreDuenio}</td>
 
             <td>${mascota.color}</td>
 
             <td>${mascota.edad}</td>
 
             <td>${mascota.peso}</td>
+
+            <td>
+            <img
+                src="${mascota.imagen}"width="80" height="80" style="object-fit: cover;" alt="${mascota.nombreMascota}">
+            </td>         
 
             <td>
                 <button class="btn btn-warning btn-sm" onclick="editarMascota('${mascota.idMascota}')">Editar</button>
@@ -67,25 +82,18 @@ function eliminarMascota(id) {
     }
 }
 
-function editarMascota(id) {
+function editarMascota(id){
+    idMascotaEditar = id;
 
-    const mascota = mascotas.find((mascota) => {
-        return mascota.idMascota === id;
-    });
+    const mascota = mascotas.find((mascota) => mascota.idMascota === id);
 
-    if (mascota) {
+    document.getElementById('editarNombreDuenio').value = mascota.nombreDuenio;
+    document.getElementById('editarNombreMascota').value = mascota.nombreMascota;
+    document.getElementById('editarColor').value = mascota.color;
+    document.getElementById('editarEdad').value = mascota.edad;
+    document.getElementById('editarPeso').value = mascota.peso;
 
-        formulario.elements['nombreDuenio'].value = mascota.nombreDuenio;
-        formulario.elements['nombreMascota'].value = mascota.nombreMascota;
-        formulario.elements['color'].value = mascota.color;
-        formulario.elements['edad'].value = mascota.edad;
-        formulario.elements['peso'].value = mascota.peso;
-
-        idMascotaEditar = id;
-
-
-        formulario.scrollIntoView({ behavior: 'smooth' });
-    }
+    modalEditar.show();
 }
 
 formulario.addEventListener('submit', (evento) => {
@@ -93,37 +101,32 @@ formulario.addEventListener('submit', (evento) => {
 
     const datos = new FormData(formulario);
 
-    const nuevaMascota = {
-        idMascota: idMascotaEditar || crypto.randomUUID(),
+    const archivo = document.getElementById('ImagenMascota').files[0];
 
-        //usar datos.get y pasar parámetros para capturar valores de la propiedad name 
-        nombreDuenio: datos.get('nombreDuenio').trim(),
-        nombreMascota: datos.get('nombreMascota').trim(),
-        color: datos.get('color').trim(),
-        edad: parseInt(datos.get('edad')),
-        peso: parseFloat(datos.get('peso'))
-    };
+    const lector = new FileReader();
 
-    if (idMascotaEditar === null) {
+    lector.onload = function () {
+
+        const nuevaMascota = {
+            idMascota: crypto.randomUUID(),
+            nombreDuenio: datos.get('nombreDuenio').trim(),
+            nombreMascota: datos.get('nombreMascota').trim(),
+            color: datos.get('color').trim(),
+            edad: parseInt(datos.get('edad')),
+            peso: parseFloat(datos.get('peso')),
+            imagen: lector.result
+        };
+
+        console.log(nuevaMascota.imagen);
 
         mascotas.push(nuevaMascota);
 
-    } else {
+        guardarDatosEnLocalStorage();
+        render();
+        formulario.reset();
+    };
 
-        const posicion = mascotas.findIndex((mascota) => {
-            return mascota.idMascota === idMascotaEditar;
-        });
-
-        if (posicion !== -1) {
-            mascotas[posicion] = nuevaMascota;
-        }
-
-        idMascotaEditar = null;
+    if (archivo) {
+        lector.readAsDataURL(archivo);
     }
-
-    guardarDatosEnLocalStorage();
-
-    render();
-
-    formulario.reset();
 });
